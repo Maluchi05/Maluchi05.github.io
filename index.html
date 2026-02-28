@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maluchi — Flutter Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- GRID BACKGROUND -->
+  <div class="grid-bg"></div>
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <div class="avatar-ring">
+        <img src="./assets/images/mypic1.jpg" alt="Nkaa-Dim Maluchi" class="avatar">
+        <div class="avatar-glow"></div>
+      </div>
+
+      <div class="sidebar-identity">
+        <h1 class="sidebar-name">Nkaa-Dim<br><span>Maluchi</span></h1>
+        <div class="sidebar-badge">
+          <span class="badge-dot"></span>
+          Flutter Full-Stack Dev
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <ul class="sidebar-contacts">
+      <li>
+        <div class="contact-icon-wrap">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-label">Email</span>
+          <a href="mailto:nkaadimmaluchi@gmail.com" class="contact-value">nkaadimmaluchi@gmail.com</a>
+        </div>
+      </li>
+      <li>
+        <div class="contact-icon-wrap">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Enugu, Nigeria</span>
+        </div>
+      </li>
+      <li>
+        <div class="contact-icon-wrap">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-label">Experience</span>
+          <span class="contact-value">2023 — Present · 2+ yrs</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-socials">
+      <a href="https://www.linkedin.com/in/nkaa-dim-maluchi" target="_blank" class="social-btn" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://x.com/Maluchi05" target="_blank" class="social-btn" aria-label="X/Twitter">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://github.com/Maluchi05" target="_blank" class="social-btn" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="main-wrapper">
+
+    <!-- NAV -->
+    <nav class="top-nav">
+      <ul class="nav-list">
+        <li><button class="nav-btn active" data-page="about">About</button></li>
+        <li><button class="nav-btn" data-page="resume">Resume</button></li>
+        <li><button class="nav-btn" data-page="portfolio">Portfolio</button></li>
+        <li><button class="nav-btn" data-page="contact">Contact</button></li>
+      </ul>
+      <div class="nav-indicator"></div>
+    </nav>
+
+    <!-- =================== ABOUT =================== -->
+    <section class="page active" id="page-about">
+
+      <div class="page-header">
+        <span class="page-eyebrow">Introduction</span>
+        <h2 class="page-title">About Me</h2>
+      </div>
+
+      <div class="about-hero">
+        <div class="about-text-block">
+          <p class="about-lead">
+            I build <em>beautiful, high-performance</em> mobile applications — from the first wireframe to the live app store.
+          </p>
+          <p class="about-body">
+            Based in Enugu, Nigeria, I specialize in Flutter full-stack development, combining Riverpod state management, Firebase and Supabase backends, and meticulous UI/UX design into apps that feel premium and run flawlessly.
+          </p>
+          <p class="about-body">
+            My background is in Mechatronics Engineering (BEng, Federal University of Technology Owerri — Second Class Upper, CGPA 4.30+, Best Student in Software Option). That engineering mindset — systems thinking, precision, problem decomposition — shapes how I architect every application I build.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Apps Shipped</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Years Building</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">4.3</span>
+            <span class="stat-label">CGPA (Eng.)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">#1</span>
+            <span class="stat-label">Software Option</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="section-title-row">
+        <h3 class="section-title">What I Do</h3>
+        <div class="title-line"></div>
+      </div>
+
+      <ul class="services-grid">
+        <li class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h4 class="service-name">Flutter App Development</h4>
+          <p class="service-desc">Full-stack mobile apps — Riverpod architecture, Firebase & Supabase backends, payment integration via Flutterwave.</p>
+        </li>
+        <li class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4 class="service-name">UI/UX Design</h4>
+          <p class="service-desc">End-to-end product design — research, wireframes, Figma prototypes, and pixel-perfect Flutter implementation.</p>
+        </li>
+        <li class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h4 class="service-name">Web Development</h4>
+          <p class="service-desc">Modern web with HTML, CSS, JavaScript, Bootstrap, and Node.js backends — clean, responsive, performant.</p>
+        </li>
+        <li class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h4 class="service-name">CAD & Simulation</h4>
+          <p class="service-desc">SolidWorks 3D modelling, ANSYS FEA/CFD simulation, and engineering analysis for complex mechanical systems.</p>
+        </li>
+      </ul>
+
+      <!-- TECH STACK -->
+      <div class="section-title-row">
+        <h3 class="section-title">Tech Stack</h3>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="tech-grid">
+
+        <div class="tech-chip" data-tech="Flutter">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="14,0 44,30 34,30 14,10" fill="#54B6F7"/>
+              <polygon points="14,38 24,48 44,28 34,28" fill="#01579B"/>
+              <polygon points="24,28 34,28 24,38 14,38" fill="#29B6F6"/>
+            </svg>
+          </div>
+          <span>Flutter</span>
+        </div>
+
+        <div class="tech-chip" data-tech="Firebase">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40L14.8 6.7c0.2-1.1 1.6-1.4 2.2-0.4l7.2 12.2L8 40z" fill="#FFA000"/>
+              <path d="M28.6 21.4L24.2 18.5 14.8 6.7c-0.6-1-2-0.7-2.2 0.4L8 40l20.6-18.6z" fill="#F57F17"/>
+              <path d="M36 16.6c-0.4-1.5-2.2-1.9-3.1-0.7L8 40l16.2 9.2c1.2 0.7 2.7 0.7 3.9 0L40 40 36 16.6z" fill="#FFCA28"/>
+            </svg>
+          </div>
+          <span>Firebase</span>
+        </div>
+
+        <div class="tech-chip" data-tech="Supabase">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="sb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3ECF8E"/><stop offset="100%" stop-color="#1A9E6A"/></linearGradient></defs>
+              <polygon points="26,4 10,28 22,28 22,44 38,20 26,20" fill="url(#sb)"/>
+            </svg>
+          </div>
+          <span>Supabase</span>
+        </div>
+
+        <div class="tech-chip" data-tech="Riverpod">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" fill="none" stroke="#54B6F7" stroke-width="3"/>
+              <circle cx="24" cy="24" r="10" fill="none" stroke="#29B6F6" stroke-width="3"/>
+              <circle cx="24" cy="24" r="4" fill="#54B6F7"/>
+              <line x1="24" y1="4" x2="24" y2="14" stroke="#54B6F7" stroke-width="3"/>
+              <line x1="24" y1="34" x2="24" y2="44" stroke="#54B6F7" stroke-width="3"/>
+              <line x1="4" y1="24" x2="14" y2="24" stroke="#54B6F7" stroke-width="3"/>
+              <line x1="34" y1="24" x2="44" y2="24" stroke="#54B6F7" stroke-width="3"/>
+            </svg>
+          </div>
+          <span>Riverpod</span>
+        </div>
+
+        <div class="tech-chip" data-tech="Figma">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="6" width="14" height="14" rx="7" fill="#F24E1E"/>
+              <rect x="24" y="6" width="14" height="14" rx="7" fill="#A259FF"/>
+              <rect x="10" y="20" width="14" height="14" rx="7" fill="#FF7262"/>
+              <circle cx="31" cy="27" r="7" fill="#1ABCFE"/>
+              <rect x="10" y="34" width="14" height="14" rx="7" fill="#0ACF83"/>
+            </svg>
+          </div>
+          <span>Figma</span>
+        </div>
+
+        <div class="tech-chip" data-tech="Node.js">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="24,3 43,13.5 43,34.5 24,45 5,34.5 5,13.5" fill="#3C873A"/>
+              <polygon points="24,8 39,16.5 39,33.5 24,42 9,33.5 9,16.5" fill="#689F63"/>
+              <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="16" fill="white">N</text>
+            </svg>
+          </div>
+          <span>Node.js</span>
+        </div>
+
+        <div class="tech-chip" data-tech="Flutterwave">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="fw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F7890C"/><stop offset="100%" stop-color="#E84D2D"/></linearGradient></defs>
+              <path d="M6 24 Q14 10 22 24 Q30 38 38 24 Q42 17 46 20" fill="none" stroke="url(#fw)" stroke-width="5" stroke-linecap="round"/>
+              <path d="M6 32 Q14 18 22 32 Q30 46 38 32 Q42 25 46 28" fill="none" stroke="url(#fw)" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+          </div>
+          <span>Flutterwave</span>
+        </div>
+
+        <div class="tech-chip" data-tech="SolidWorks">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="sw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF2222"/><stop offset="100%" stop-color="#AA0000"/></linearGradient></defs>
+              <path d="M36 12 C36 12 28 8 20 12 C12 16 10 24 16 28 C22 32 30 30 32 34 C34 38 30 44 20 44 C14 44 8 40 8 40" fill="none" stroke="url(#sw)" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="38" cy="34" r="4" fill="#FF2222"/>
+            </svg>
+          </div>
+          <span>SolidWorks</span>
+        </div>
+
+        <div class="tech-chip" data-tech="ANSYS">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="ans" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFB800"/><stop offset="100%" stop-color="#FF8C00"/></linearGradient></defs>
+              <polygon points="24,4 44,42 4,42" fill="none" stroke="url(#ans)" stroke-width="4" stroke-linejoin="round"/>
+              <polygon points="24,14 34,36 14,36" fill="url(#ans)" opacity="0.3"/>
+            </svg>
+          </div>
+          <span>ANSYS</span>
+        </div>
+
+        <div class="tech-chip" data-tech="GitHub">
+          <div class="tech-logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4C12.95 4 4 12.95 4 24c0 8.84 5.73 16.33 13.67 18.97.99.18 1.36-.43 1.36-.96 0-.47-.02-2.02-.03-3.67-5.54 1.2-6.71-2.37-6.71-2.37-.91-2.3-2.21-2.92-2.21-2.92-1.81-1.23.14-1.21.14-1.21 2 .14 3.05 2.05 3.05 2.05 1.78 3.04 4.66 2.16 5.8 1.65.18-1.29.69-2.16 1.26-2.66-4.42-.5-9.07-2.21-9.07-9.84 0-2.17.78-3.95 2.05-5.34-.21-.5-.89-2.53.19-5.27 0 0 1.67-.53 5.46 2.03A19.1 19.1 0 0124 15.5c1.69.01 3.39.23 4.98.67 3.79-2.56 5.46-2.03 5.46-2.03 1.09 2.74.4 4.77.2 5.27 1.28 1.39 2.05 3.17 2.05 5.34 0 7.65-4.66 9.33-9.1 9.82.72.62 1.35 1.83 1.35 3.69 0 2.66-.02 4.81-.02 5.46 0 .53.36 1.15 1.37.96C38.28 40.32 44 32.84 44 24c0-11.05-8.95-20-20-20z" fill="#e6edf3"/>
+            </svg>
+          </div>
+          <span>GitHub</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =================== RESUME =================== -->
+    <section class="page" id="page-resume">
+
+      <div class="page-header">
+        <span class="page-eyebrow">Background</span>
+        <h2 class="page-title">Resume</h2>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section-title-row">
+        <h3 class="section-title">Experience</h3>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-body">
+            <div class="timeline-meta">
+              <span class="timeline-period">2023 — Present</span>
+              <span class="timeline-badge">Active</span>
+            </div>
+            <h4 class="timeline-role">Flutter Full Stack Developer & UI/UX Designer</h4>
+            <p class="timeline-company">Independent / Freelance</p>
+            <p class="timeline-desc">
+              Building production-grade mobile applications from zero to live. Handling the complete development cycle: product design in Figma, pixel-perfect Flutter implementation, backend integration with Firebase & Supabase, Riverpod state management, and Flutterwave payment systems. Each project is architected for scale, maintainability, and beautiful UX.
+            </p>
+            <div class="timeline-tags">
+              <span>Flutter</span><span>Riverpod</span><span>Firebase</span><span>Supabase</span><span>Figma</span><span>Flutterwave</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-body">
+            <div class="timeline-meta">
+              <span class="timeline-period">2023 — 2025</span>
+            </div>
+            <h4 class="timeline-role">CAD & Simulation Engineer</h4>
+            <p class="timeline-company">Federal University of Technology, Owerri</p>
+            <p class="timeline-desc">
+              Designed complex mechanical assemblies including combustion engine models in SolidWorks. Conducted advanced simulation projects in ANSYS covering FEA, CFD, LPBF, and thermal analysis for engineering research.
+            </p>
+            <div class="timeline-tags">
+              <span>SolidWorks</span><span>ANSYS</span><span>FEA</span><span>CFD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <div class="timeline-meta">
+              <span class="timeline-period">2023 — 2025</span>
+            </div>
+            <h4 class="timeline-role">Embedded Systems Developer</h4>
+            <p class="timeline-company">Mechatronics Department, FUTO</p>
+            <p class="timeline-desc">
+              Developed autonomous drone and land vehicle systems, integrating microcontroller hardware with software for real-time control and sensor fusion.
+            </p>
+            <div class="timeline-tags">
+              <span>Embedded C</span><span>Arduino</span><span>Drones</span><span>Sensors</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section-title-row" style="margin-top: 56px;">
+        <h3 class="section-title">Education</h3>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="education-card">
+        <div class="edu-left">
+          <div class="edu-icon">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          </div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-period">Aug 2020 — Sep 2025</div>
+          <h4 class="edu-degree">Bachelor of Engineering — Mechatronics</h4>
+          <p class="edu-school">Federal University of Technology, Owerri (FUTO)</p>
+          <div class="edu-achievements">
+            <span class="edu-achievement">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Second Class Upper Honours
+            </span>
+            <span class="edu-achievement">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              CGPA 4.30+
+            </span>
+            <span class="edu-achievement highlight">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Best Student — Software Option
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="section-title-row" style="margin-top: 56px;">
+        <h3 class="section-title">Skills</h3>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="skills-container">
+        <div class="skill-row">
+          <span class="skill-name">Flutter Development</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 80%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">UI/UX Design</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 78%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">78%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Riverpod State Management</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 75%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Firebase & Supabase</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 72%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">SolidWorks CAD</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 75%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">ANSYS Simulation</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 70%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Web Development</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 70%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Node.js</span>
+          <div class="skill-track">
+            <div class="skill-fill" style="--w: 65%">
+              <div class="skill-glow"></div>
+            </div>
+          </div>
+          <span class="skill-pct">65%</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =================== PORTFOLIO =================== -->
+    <section class="page" id="page-portfolio">
+
+      <div class="page-header">
+        <span class="page-eyebrow">Work</span>
+        <h2 class="page-title">Portfolio</h2>
+      </div>
+
+      <!-- FILTER -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mobile apps">Mobile Apps</button>
+        <button class="filter-btn" data-filter="ui/ux">UI/UX</button>
+        <button class="filter-btn" data-filter="cad projects">CAD Projects</button>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- FX Globe -->
+        <article class="project-card" data-category="mobile apps">
+          <a href="https://github.com/Maluchi05/Released-Apps/releases/tag/FXGlobe1.0" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/fxhome.jpg" alt="FX Globe" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">Mobile App</div>
+              <h3 class="project-name">FX Globe</h3>
+              <p class="project-desc">Forex & crypto signal provider app with real-time market data and analysis tools.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- FX Signals Pro -->
+        <article class="project-card" data-category="mobile apps">
+          <a href="https://github.com/Maluchi05/Released-Apps/releases/tag/fxsignalspro-v1.0" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/fxsignalprohome.jpg" alt="FX Signals Pro" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">Mobile App</div>
+              <h3 class="project-name">FX Signals Pro</h3>
+              <p class="project-desc">Advanced trading signal application with premium alerts and market intelligence.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Wonderverse -->
+        <article class="project-card" data-category="mobile apps">
+          <a href="https://github.com/Maluchi05/Released-Apps/releases/tag/wonderverse-v1.0" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/wonderhome.jpg" alt="Wonderverse" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">Mobile App</div>
+              <h3 class="project-name">Wonderverse</h3>
+              <p class="project-desc">Interactive science learning platform for children featuring gamified exploration.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Market Place -->
+        <article class="project-card" data-category="mobile apps">
+          <a href="https://github.com/Maluchi05/engineering-market" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/markethome.jpg" alt="Market Place" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">Mobile App</div>
+              <h3 class="project-name">Market Place</h3>
+              <p class="project-desc">Full-featured e-commerce marketplace with Flutter, Supabase, and Flutterwave payments.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Malunova UI/UX -->
+        <article class="project-card" data-category="ui/ux">
+          <!-- ACTION: Log into Figma and rename this project from "Untitled" to "Malunova" -->
+          <a href="https://www.figma.com/design/2BdOqsYukKL42PhwRztY8l/Untitled?node-id=0-1&t=FxSok31E88p8xfH2-1" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/malunova.png" alt="Malunova UI/UX" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <span>Open in Figma</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">UI/UX</div>
+              <h3 class="project-name">Malunova</h3>
+              <p class="project-desc">Complete product design with full user research, wireframes, and high-fidelity prototype.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Food App Design -->
+        <article class="project-card" data-category="ui/ux">
+          <!-- ACTION: Log into Figma and rename this project from "Untitled" to "Food App Design" -->
+          <a href="https://www.figma.com/design/f88i1e76Jup8scLFeWqRZN/Untitled?node-id=35-12&t=h755zLfw2oeGTtFK-1" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/food.png" alt="Food App Design" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <span>Open in Figma</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">UI/UX</div>
+              <h3 class="project-name">Food App Design</h3>
+              <p class="project-desc">Elegant food delivery app design with intuitive ordering flow and rich visual identity.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Gearbox Assembly -->
+        <!-- ACTION: Replace href="#" with Google Drive link to your SolidWorks renders -->
+        <article class="project-card" data-category="cad projects">
+          <a href="#" onclick="return false;" class="project-link no-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/swgearbox.jpg" alt="Gearbox Assembly" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </div>
+                <span>Available on Request</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">CAD Project</div>
+              <h3 class="project-name">Gearbox Assembly</h3>
+              <p class="project-desc">Full gearbox 3D model and assembly in SolidWorks with tolerance analysis and BOM.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Engine Assembly -->
+        <!-- ACTION: Replace href="#" with Google Drive link to your SolidWorks renders -->
+        <article class="project-card" data-category="cad projects">
+          <a href="#" onclick="return false;" class="project-link no-link">
+            <div class="project-img-wrap">
+              <img src="./assets/images/swengineassembly.jpg" alt="Engine Assembly" loading="lazy" class="project-img">
+              <div class="project-overlay">
+                <div class="project-overlay-icon">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </div>
+                <span>Available on Request</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-cat-tag">CAD Project</div>
+              <h3 class="project-name">Engine Assembly Model</h3>
+              <p class="project-desc">Complete combustion engine assembly with all components modelled from scratch in SolidWorks.</p>
+            </div>
+          </a>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =================== CONTACT =================== -->
+    <section class="page" id="page-contact">
+
+      <div class="page-header">
+        <span class="page-eyebrow">Get in Touch</span>
+        <h2 class="page-title">Contact</h2>
+      </div>
+
+      <div class="contact-layout">
+
+        <div class="contact-info-panel">
+          <p class="contact-intro">
+            Have a project in mind? Looking for a developer who handles design <em>and</em> code? Let's talk — I'd love to hear what you're building.
+          </p>
+
+          <div class="contact-detail-list">
+            <div class="contact-detail-item">
+              <div class="cdi-icon">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <span class="cdi-label">Email me</span>
+                <a href="mailto:nkaadimmaluchi@gmail.com" class="cdi-value">nkaadimmaluchi@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="cdi-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <span class="cdi-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/nkaa-dim-maluchi" target="_blank" class="cdi-value">linkedin.com/in/nkaa-dim-maluchi</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="cdi-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </div>
+              <div>
+                <span class="cdi-label">GitHub</span>
+                <a href="https://github.com/Maluchi05" target="_blank" class="cdi-value">github.com/Maluchi05</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <!--
+            Replace YOUR_FORMSPREE_CODE with your actual code from formspree.io
+            e.g. action="https://formspree.io/f/xpwzqkva"
+          -->
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_CODE" method="POST" class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Full Name</label>
+                <input type="text" id="f-name" name="fullname" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email Address</label>
+                <input type="email" id="f-email" name="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-subject">Subject</label>
+              <input type="text" id="f-subject" name="subject" placeholder="Project inquiry">
+            </div>
+            <div class="form-group">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <div class="btn-icon">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </div>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.62280943906!2d7.312456!3d6.444444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a3a48d87ce39%3A0xd7a8324bddbba1f!2sEnugu%2C%20Nigeria!5e0!3m2!1sen!2s!4v1647608789441!5m2!1sen!2s"
+          width="400" height="300" loading="lazy" title="Location map"></iframe>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-nav">
+    <button class="mobile-nav-btn active" data-page="about">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>About</span>
+    </button>
+    <button class="mobile-nav-btn" data-page="resume">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      <span>Resume</span>
+    </button>
+    <button class="mobile-nav-btn" data-page="portfolio">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <span>Portfolio</span>
+    </button>
+    <button class="mobile-nav-btn" data-page="contact">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span>Contact</span>
+    </button>
+  </nav>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
