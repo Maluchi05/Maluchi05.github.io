@@ -59,6 +59,36 @@
 })();
 
 
+// ─── THEME TOGGLE (light / dark) ─────────────────
+(function initTheme() {
+  const root   = document.documentElement;
+  const toggle = document.getElementById('theme-toggle');
+  const KEY    = 'maluchi-portfolio-theme';
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+  }
+
+  // Saved preference wins; otherwise default to the site's original dark theme.
+  const saved = localStorage.getItem(KEY);
+  if (saved === 'light' || saved === 'dark') {
+    applyTheme(saved);
+  }
+
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    const next = isLight ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem(KEY, next);
+  });
+})();
+
+
 // ─── PAGE NAVIGATION ─────────────────────────────
 (function initNavigation() {
   const pages    = document.querySelectorAll('.page');
